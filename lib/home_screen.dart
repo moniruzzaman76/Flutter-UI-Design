@@ -100,22 +100,19 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        bottomNavigationBar: Card(
-          elevation: 100,
-          child: BottomNavigationBar(
-            onTap: onTabTapped,
-            currentIndex: selectedIndex,
-            backgroundColor: Colors.white,
-            selectedFontSize: 17,
-            selectedItemColor: Colors.orange,
-            unselectedItemColor: Colors.blueGrey,
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-              BottomNavigationBarItem(icon: Icon(Icons.phone), label: "Phone"),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.settings), label: "Setting"),
-            ],
-          ),
+        bottomNavigationBar: BottomNavigationBar(
+          onTap: onTabTapped,
+          currentIndex: selectedIndex,
+          backgroundColor: Colors.white,
+          selectedFontSize: 17,
+          selectedItemColor: Colors.orange,
+          unselectedItemColor: Colors.blueGrey,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.phone), label: "Phone"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), label: "Setting"),
+          ],
         ),
         body: Center(
             child: pageList[selectedIndex]
