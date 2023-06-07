@@ -8,12 +8,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   int selectedIndex = 0;
 
   List<Widget>pageList = const [
-    Text("page Number 1"),
-    Text("Page Number 2",),
-    Text("Page Number 3",),
+     Text("page Number 1",style: TextStyle(fontSize: 25,color: Colors.red),),
+    Text("Page Number 2",style: TextStyle(fontSize: 25,color: Colors.green),),
+    Text("Page Number 3",style: TextStyle(fontSize: 25,color: Colors.blueGrey),),
   ];
 
   void onTabTapped(int index){
@@ -99,15 +100,22 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          onTap: onTabTapped,
-          currentIndex: selectedIndex,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.phone), label: "Phone"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: "Setting"),
-          ],
+        bottomNavigationBar: Card(
+          elevation: 100,
+          child: BottomNavigationBar(
+            onTap: onTabTapped,
+            currentIndex: selectedIndex,
+            backgroundColor: Colors.white,
+            selectedFontSize: 17,
+            selectedItemColor: Colors.orange,
+            unselectedItemColor: Colors.blueGrey,
+            items: const [
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+              BottomNavigationBarItem(icon: Icon(Icons.phone), label: "Phone"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.settings), label: "Setting"),
+            ],
+          ),
         ),
         body: Center(
             child: pageList[selectedIndex]
